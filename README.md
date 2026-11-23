@@ -11,6 +11,10 @@
 
 *Detect tool hallucinations, validate argument schemas, and enforce CI/CD accuracy SLAs in < 50ms.*
 
+<br/>
+
+<img src="assets/demo.svg" alt="evallite Terminal Demo" width="100%"/>
+
 </div>
 
 ---
