@@ -51,9 +51,11 @@ Most AI evaluation platforms (LangSmith, Braintrust, Phoenix) depend on remote S
 ### Installation
 
 ```bash
-git clone https://github.com/BNTiyan/evallite.git
-cd evallite
-pip install -e .
+# 1-Line Standalone Install (via curl)
+curl -fsSL https://raw.githubusercontent.com/BNTiyan/evallite/main/install.sh | bash
+
+# Or install from source
+git clone https://github.com/BNTiyan/evallite.git && cd evallite && pip install -e .
 ```
 
 ### 1. Run the Interactive Terminal Demo
@@ -70,6 +72,20 @@ evallite demo --ci
 ### 3. Run Custom Evaluation Suites
 ```bash
 evallite run suite.json --min-accuracy 95 --ci -o eval_report.json
+```
+
+---
+
+## Use in GitHub Actions
+
+You can drop `evallite` directly into any GitHub Actions pipeline:
+
+```yaml
+- name: Evaluate Agent Tool Calls
+  uses: BNTiyan/evallite@main
+  with:
+    suite: 'demo'
+    min-accuracy: '100'
 ```
 
 ---
